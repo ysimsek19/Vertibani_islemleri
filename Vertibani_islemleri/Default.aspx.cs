@@ -23,6 +23,29 @@ namespace Vertibani_islemleri
 				}
 				test.InnerHtml = ogrenci;
 			}
+			
+		}
+
+		protected void LinkButton1_Click(object sender, EventArgs e)
+		{
+			if (no.Value != "" && ad.Value != "")
+			{
+
+
+				string[] alanlar = { "ogrenci_no", "ogrenci_adi" };
+				string[] veriler = { no.Value, ad.Value };
+				DataTable vt = Db.DataTableGetir(@"Select * from ogrenci_table where ogrenci_no='"+ no.Value+@"'");
+				if (vt.Rows.Count==0)
+				{
+					Db.sqlInsert(alanlar, veriler, "ogrenci_table");
+				}
+				else
+				{
+					Response.Write("Bu Numara kullanılmaktador");
+				}
+			
+			}
+			
 		}
 	}
 }

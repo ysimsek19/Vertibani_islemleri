@@ -6,4 +6,7 @@
 
 
     </ul>
+    <input type="text" id="no" runat="server" />
+    <input type="text" id="ad" runat="server" />
+    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Kaydet</asp:LinkButton>
 </asp:Content>
